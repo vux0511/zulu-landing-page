@@ -36,4 +36,10 @@
     &-social-link + &-social-link {
         margin-left: 15px;
     }
+
+    @media screen and (max-width: 767.98px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 50px 20px;
+    }
 }

@@ -10,14 +10,8 @@
         text-align: center;
         border-radius: 20px;
         transition: all 0.2s linear;
-        &:hover {
-            border-color: transparent;
-            box-shadow: 0 0 50px 10px rgba(black, 0.03);
-        }
     }
-    &-item:not(:first-child) {
-        margin-left: 70px;
-    }
+
     &-image {
         width: 120px;
         height: 120px;
@@ -58,6 +52,50 @@
         ion-icon {
             color: $yellow-color;
             font-size: 20px;
+        }
+    }
+
+    @media (hover: hover) {
+        &-item:hover {
+            border-color: transparent;
+            box-shadow: 0 0 50px 10px rgba(black, 0.03);
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        &-item:not(:first-child) {
+            margin-left: 70px;
+        }
+    }
+
+    @media screen and (max-width: 1023.98px) {
+        &-list {
+            display: grid;
+            justify-content: flex-start;
+            grid-auto-columns: 450px;
+            grid-auto-flow: column;
+            grid-gap: 0 50px;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            grid-template-columns: unset;
+            &::-webkit-scrollbar {
+                display: none;
+                width: 0;
+            }
+            & > * {
+                scroll-snap-align: start;
+                width: 100%;
+            }
+        }
+    }
+    @media screen and (max-width: 479.98px) {
+        &-list {
+            grid-auto-columns: 80%;
         }
     }
 }
